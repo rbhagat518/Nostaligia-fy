@@ -1,97 +1,106 @@
-Nostalgia-fy
+# 📱 Nostalgia-fy
 
-App Overview
+---
 
-Nostalgia-fy is an iOS app that lets users rediscover memories by combining their Spotify listening history with photos taken on the same calendar day, regardless of year. Users pick a date from a calendar, see what tracks they played that day, and can tap a track to view a personalized montage of photos taken on the same date from previous years.
+## 📖 App Overview
 
-App Evaluation
+**Nostalgia-fy** is an iOS app that lets users rediscover memories by combining their **Spotify listening history** with **photos taken on the same calendar date**, regardless of year.
 
-Mobile:
+- Select a date using a calendar UI
+- View the songs you listened to on that day (from Spotify history)
+- Tap a song to generate a photo montage from any past years that share the same month/day
 
-Uses music streaming APIs and native photo library access
+It’s a memory lane powered by music and moments.
 
-Emphasizes mobile-specific features: photo browsing, music, and date selection UI
+---
 
-Story:
+## ✅ App Evaluation
 
-Brings together personal music taste and memories
+### 📱 Mobile
+- Uses iOS-exclusive capabilities: PhotoKit, calendar UI, and Spotify’s OAuth + API
+- Strong mobile-first experience combining gestures, music, and photos
 
-Offers a compelling way to relive moments linked to music
+### 🎯 Story
+- Strong nostalgic appeal — music meets memory
+- Easy for users to understand and emotionally resonate with
+- Great for reflecting on the past and reliving moments tied to songs
 
-A clear value prop: nostalgia and discovery
+### 📊 Market
+- Targets Spotify users with photo libraries
+- Appeals to Gen Z and Millennials
+- Niche product, but highly relevant for people who tie emotion to music/photos
 
-Market:
+### 🔁 Habit
+- Each day has new music + photo pairings
+- Encourages re-visiting the app out of curiosity and nostalgia
 
-Spotify users with photo libraries
+### 🧠 Scope
+- MVP includes: Spotify login → calendar → song list → montage
+- Manageable and expandable (slideshow, music preview, sharing)
 
-Appeals to Gen Z and Millennials who associate music with memory
+---
 
-Fits a niche but emotionally resonant use case
+## 🛠 App Spec
 
-Habit:
+### Required Features
+- [x] Spotify login using PKCE
+- [x] UIDatePicker to select a calendar day
+- [x] Fetch recently played Spotify tracks
+- [x] Filter tracks to match selected date (any year)
+- [x] Tap a track to push to new screen
+- [x] On that screen: fetch photos from any year that match the selected day/month
+- [x] Display photos in a UICollectionView
 
-Encourages regular exploration by date
+### Optional Features
+- [ ] Fullscreen slideshow with crossfade animations
+- [ ] Play song preview while showing the montage
+- [ ] Save montage or share to Instagram/Snapchat
+- [ ] Filter photos by year
+- [ ] Persist user’s last session / track selection
 
-Each visit offers different song+photo pairings
+---
 
-Habit-forming for nostalgia and memory reflection
+## 🖥 Screens
 
-Scope:
+### 1. Login Screen
+- Spotify authentication via `ASWebAuthenticationSession`
 
-MVP includes login with Spotify, calendar selection, track list, and photo montage per track
+### 2. Calendar Screen
+- `UIDatePicker` to select a day
+- "Fetch Tracks" button
+- `UITableView` with track name and artists
 
-Technically scoped for completion in a few weeks with opportunity to expand
+### 3. Montage Screen
+- Label with `"Photos from [Track]'s Day"`
+- `UICollectionView` of matching photo assets
 
-App Spec
+---
 
-Required Features
+## 🧭 Navigation Flow
 
-
-
-Optional Features
-
-
-
-Screens
-
-Login Screen
-
-Spotify authentication
-
-Calendar Screen
-
-UIDatePicker
-
-Button to "Fetch Tracks"
-
-UITableView showing tracks with artist details
-
-Montage Screen
-
-UILabel showing "Photos from [Track]’s Day"
-
-UICollectionView showing matched images
-
-Navigation Flow
-
-Flow Navigation
-
-Login → Calendar Screen (on successful auth)
-
-Calendar Screen
-
-Tap "Fetch Tracks" → shows tracks for that date
-
-Tap track → pushes to Montage Screen with photos for that track's played date
-
-Wireframes
-
-(Include images or upload scans in your repo under wireframes/ folder and reference them here)
-
-![Calendar Screen Wireframe](wireframes/calendar_screen.png)
-![Montage Screen Wireframe](wireframes/montage_screen.png)
-
-Repo Checklist
+[Login Screen] ↓ [Calendar + Tracks Screen] ↓ tap on a track [Montage Screen with photos from same month/day]
 
 
+---
+
+## 🖼 Wireframes
+
+(Include scans/photos in a `wireframes/` folder of your repo and reference them here.)
+
+- ![Calendar Screen](wireframes/calendar_screen.png)
+- ![Montage Screen](wireframes/montage_screen.png)
+
+---
+
+## 📦 Final Repo Checklist
+
+- [x] brainstorming.md
+- [x] readme.md (this file)
+- [x] wireframes (hand-drawn or digital)
+- [ ] [BONUS] Digital mockup (e.g., in Figma)
+- [ ] [BONUS] Interactive prototype (clickable flow)
+
+---
+
+💫 Let the nostalgia begin.
 
